@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  
+  <head>
+    <title>AS1 CSCI4300 - New Entry</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="stylesheet.css">
+    <script src="https://kit.fontawesome.com/0318fd2bd1.js" crossorigin="anonymous"></script>
+    <script src="outline.js"></script>
+  </head>
+
+  <body>
+    <div class="headerContainer">
+      <header class="header">
+	<nav class="headerNav">
+	  <h1 class="logo"><a href="#">Cartoon<span class="logo2Half">Catalog</span></a></h1>
+
+	  <!-- Other stuff here, if necessary -->
+	</nav>
+      </header>
+    </div>
+
+    <div class="contentContainer">
+      <div class="content">
+	<!-- Other stuff here, if necessary -->
+	
+	<h1>Create a New Entry</h1>
+	
+	<form action="/action_page.php">
+		<label for="img">Select Banner image:</label>
+		<input type="file" id="img_banner" name="img" accept="image/*">
+		<input type="submit">
+	</form>
+	<img src="data:"
+		 height="420" width="900"
+		 alt="Selected Banner Image"</img>
+
+		<br><br>
+		 
+	<form action="/action_page.php">
+		<label for="img">Select Poster image:</label>
+		<input type="file" id="img_poster" name="img" accept="image/*">
+		<input type="submit">
+	</form>	 
+		 
+	<img src="data:"
+		 height="420" width="420"
+		 alt="Selected Poster Image"></img>
+		 
+	<br><br>
+	
+	<label for="entry">Choose Series or Movie Entry:</label>
+	<select id="entry">
+		<option value="series">Series</option>
+		<option value="movie">Movie</option>
+	</select>
+	
+	<br><br>
+		 
+	<form action="/action_page.php">
+		<label for="title">Title:</label><input type="text" id="title" name="title">
+		<br>
+		<label for="airDate">Air Date:</label><input type="text" id="airDate" name="airDate">
+		<br>
+		<label for="endAirDate">End Air Date:</label><input type="text" id="endAirDate" name="endAirDate">
+		<br>
+		<label for="numEp">Number of Episodes:</label><input type="text" id="numEp" name="numEp">
+		<br>
+		<label for="numSeasons">Number of Seasons:</label><input type="text" id="numSeasons" name="numSeasons">
+		<br>
+		
+		<label for="entry">Genre(s):</label>
+			<select id="entry" multiple>
+			<option value="action">action</option>
+			<option value="comedy">comedy</option>
+			<option value="fantasy">fantasy</option>
+			<option value="adventure">adventure</option>
+			<option value="science-fiction">science-fiction</option>
+			<option value="horror">horror</option>
+			<option value="mystery">mystery</option>
+			<option value="romance">romance</option>
+			<option value="thriller">thriller</option>
+			<option value="drama">drama</option>
+			<option value="musical">musical</option>
+			<option value="war">war</option>
+		</select>
+		
+		<br>
+		<label for="voiceCast">Voice Cast:</label><input type="text" id="voiceCast" name="fname">
+		<input type="text" id="voiceCast2" name="voiceCast2">
+		<input type="text" id="voiceCast3" name="voiceCast3">
+		<br>
+		<label for="Summary">Summary:</label><input type="text" id="Summary" name="Summary">
+	</form>
+	
+	<br><br>
+
+	<form action="/action_page.php">
+		<label for="Title">Title:</label><input type="text" id="Title" name="Title">
+		<br>
+		<label for="year">Year Released:</label><input type="text" id="year" name="year">
+		<br>
+		<label for="entry">Genre(s):</label>
+			<select id="entry" multiple>
+			<option value="action">action</option>
+			<option value="comedy">comedy</option>
+			<option value="fantasy">fantasy</option>
+			<option value="adventure">adventure</option>
+			<option value="science-fiction">science-fiction</option>
+			<option value="horror">horror</option>
+			<option value="mystery">mystery</option>
+			<option value="romance">romance</option>
+			<option value="thriller">thriller</option>
+			<option value="drama">drama</option>
+			<option value="musical">musical</option>
+			<option value="war">war</option>
+		</select>
+		
+		<br>
+		<label for="runTime">Running Time:</label><input type="text" id="runTime" name="runTime"><br>
+		<label for="Country">Country:</label><input type="text" id="Country" name="Country"><br>
+		<label for="Language">Language:</label><input type="text" id="Language" name="Language"><br>
+		<label for="Budget">Budget:</label><input type="text" id="Budget" name="Budget"><br>
+		<label for="boxOffice">Box Office:</label><input type="text" id="boxOffice" name="boxOffice"><br>
+		<label for="productionCompany">Production Company:</label><input type="text" id="productionCompany" name="productionCompany">
+		
+		<br>
+		<label for="voiceCast">Voice Cast:</label><input type="text" id="voiceCast" name="voiceCast">
+		<input type="text" id="voiceCast2" name="voiceCast2">
+		<input type="text" id="voiceCast3" name="voiceCast3">
+		<br>
+		<label for="Summary">Summary:</label><input type="text" id="Summary" name="Summary">
+		
+		<br><br>
+		<input type="submit" value="Submit">
+	</form>
+	
+      </div>
+    </div>
+
+    <div class="footerContainer">
+      <footer class="footer">
+	<h1 class="footerLogo"><a href="#">Cartoon<span class="logo2Half">Catalog</span></a></h1>
+
+	<!-- Other stuff here, if necessary -->
+      </footer>
+    </div>
+  </body>
+  
+</html>
+

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  
+  <head>
+    <title>AS1 CSCI4300 - Homepage</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="stylesheet.css">
+    <script src="https://kit.fontawesome.com/0318fd2bd1.js" crossorigin="anonymous"></script>
+    <script src="outline.js"></script>
+  </head>
+
+  <body>
+    <div class="headerContainer">
+      <header class="header">
+	<nav class="headerNav">
+	  <h1 class="logo"><a href="#">Media<span class="logo2Half">Catalog</span></a></h1>
+	  
+	  <ul class="headerButtons">
+	    <li><a href="#" class="headerButton1">LOGIN</a></li>
+	    <li><a href="#" class="headerButton2">REGISTER</a></li>
+	  </ul>
+	</nav>
+	
+	<h1 class="infoText">
+	  Find information about your favorite movies<br>and shows in one place.
+	</h1>
+
+	<form class="searchForm" method="POST">
+	  <input type="text" class="searchBar" placeholder="Try a search...">
+	  <button type="submit" class="searchButton"><i class="fas fa-search"></i></button>
+	</form>
+      </header>
+    </div>
+
+    <div class="contentContainer">
+      <div class="content">
+	<ul class="contentBoxes">
+	  <li class="contentBoxLi">
+	    <div class="contentBox1">
+	      <i class="fas fa-list-ol fa-3x"></i>
+	      <h3 class="contentHeader">Make a List of your Favorite Movies and Shows</h3>
+	      <p class="contentText">Easily keep track of all your favorites.</p>
+	      <p class="contentText">Stop using smartphone memos and text files; store your lists in one place.</p>
+	    </div>
+	  </li>
+
+	  <li class="contentBoxLi">
+	    <div class="contentBox2">
+	      <i class="fas fa-star-half-alt fa-3x"></i>
+	      <h3 class="contentHeader">See and Write Reviews</h3>
+	      <p class="contentText">Find good movies and shows, not bads ones.</p>
+	      <p class="contentText">Help others find good movies and shows by writing reviews.</p>
+	    </div>
+	  </li>
+
+	  <li class="contentBoxLi">
+	    <div class="contentBox3">
+	      <i class="fas fa-database fa-3x"></i>
+	      <h3 class="contentHeader">A Community Database of Media</h3>
+	      <p class="contentText">Find information about your favorite movies and shows.</p>
+	      <p class="contentText">Help others by adding information about your favorite movies and shows.</p>
+	    </div>
+	  </li>
+	</ul>
+	
+	<div class="bottomButtonContainer">
+	  <a href="#" class="bottomButton">SIGN UP</a>
+	</div>
+      </div>
+    </div>
+
+    <div class="footerContainer">
+      <footer class="footer">
+	<h1 class="footerLogo"><a href="#">Media<span class="logo2Half">Catalog</span></a></h1>
+	<a href="#" class="footerText">Login</a>
+	<a href="#" class="footerText">Register</a>
+      </footer>
+    </div>
+  </body>
+  
+</html>
+

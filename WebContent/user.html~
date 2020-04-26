@@ -1,0 +1,84 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+
+  <head>
+    <title>AS1 CSCI4300 - User Account</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="stylesheet.css">
+    <script src="https://kit.fontawesome.com/0318fd2bd1.js" crossorigin="anonymous"></script>
+    <script src="outline.js"></script>
+  </head>
+
+  <body>
+    <div class="headerContainer">
+      <header class="header">
+        <nav class="headerNav">
+          <h1 class="logo"><a href="index.html">Cartoon<span class="logo2Half">Catalog</span></a></h1>
+
+          <ul class="headerButtons">
+	    <li><a href="login.html" class="headerButton1">LOGIN</a></li>
+            <li><a href="register.html" class="headerButton2">REGISTER</a></li>
+          </ul>
+        </nav>
+      </header>
+    </div>
+
+    <div class="contentContainer" style="align:center">
+      <section class="first">
+        <fieldset style= "width:50%; margin:auto;">
+          <legend>Profile</legend>
+          <form>
+	    <p id="cuser">Current username: </p>
+	    <div>New Username: <input class="userAccountInput" type="text" id="username"></div>
+	    <br>
+	    <div>Re-enter new Username: <input class="userAccountInput"type="text" id="username2"></div>
+	    <br>
+	    <input class="userAccountInput" type="submit" id="button" value="Update">
+	    <!-- <p><br> -->
+          </form>
+
+	  <br>
+	  <br>
+	  
+	  <form>
+	    <p id = "cmail">Current email: </p>
+	    <div>New email: <input class="userAccountInput" type="text" id="email" placeholder="example@example.com"> </div>
+	    <br>
+	    <input class="userAccountInput" type="submit" id="button2" value="Update">
+          </form><!-- <br><br> -->
+
+	  <br>
+	  <br>
+	  
+	  <form>
+	    <div>Current password: <input class="userAccountInput" type="text" id="cpass"></div><br>
+	    <div>New password: <input class="userAccountInput" type="text" id="newpass"></div><br>
+	    <div>Re-enter new password: <input class="userAccountInput" type="text" id="newpass2"></div>
+	    <br>
+	    <input class="userAccountInput" type="submit" id="button3" value="Update">
+	    <!-- <p> -->
+          </form> 
+        </fieldset>
+	<br><br>
+        <fieldset style="width:50%; margin:auto;">
+          <legend>Favorite shows</legend>
+          <form>
+	    <label id="top_shows"> </label>
+          </form>
+        </fieldset>
+      </section>
+    </div>
+
+    <div class="footerContainer">
+      <footer class="footer">
+        <h1 class="footerLogo"><a href="index.html">Cartoon<span class="logo2Half">Catalog</span></a></h1>
+        <a href="register.html" class="footerText">Register</a>
+      </footer>
+    </div>
+  </body>
+  
+  <script src="user.js"></script>
+</html>
+

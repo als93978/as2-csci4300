@@ -1,0 +1,630 @@
+@font-face {
+    font-family: 'robotoregular';
+    src: url('fonts/roboto_regular_macroman/Roboto-Regular-webfont.eot');
+    src: url('fonts/roboto_regular_macroman/Roboto-Regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/roboto_regular_macroman/Roboto-Regular-webfont.woff2') format('woff2'),
+         url('fonts/roboto_regular_macroman/Roboto-Regular-webfont.woff') format('woff'),
+         url('fonts/roboto_regular_macroman/Roboto-Regular-webfont.ttf') format('truetype'),
+         url('fonts/roboto_regular_macroman/Roboto-Regular-webfont.svg#robotoregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'robotobold';
+    src: url('fonts/roboto_bold_macroman/Roboto-Bold-webfont.eot');
+    src: url('fonts/roboto_bold_macroman/Roboto-Bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/roboto_bold_macroman/Roboto-Bold-webfont.woff2') format('woff2'),
+         url('fonts/roboto_bold_macroman/Roboto-Bold-webfont.woff') format('woff'),
+         url('fonts/roboto_bold_macroman/Roboto-Bold-webfont.ttf') format('truetype'),
+         url('fonts/roboto_bold_macroman/Roboto-Bold-webfont.svg#robotobold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'roboto_condensedbold';
+    src: url('fonts/roboto_boldcondensed_macroman/RobotoCondensed-Bold-webfont.eot');
+    src: url('fonts/roboto_boldcondensed_macroman/RobotoCondensed-Bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/roboto_boldcondensed_macroman/RobotoCondensed-Bold-webfont.woff2') format('woff2'),
+         url('fonts/roboto_boldcondensed_macroman/RobotoCondensed-Bold-webfont.woff') format('woff'),
+         url('fonts/roboto_boldcondensed_macroman/RobotoCondensed-Bold-webfont.ttf') format('truetype'),
+         url('fonts/roboto_boldcondensed_macroman/RobotoCondensed-Bold-webfont.svg#roboto_condensedbold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+html {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    padding: 0px;
+    margin: 0px;
+    width: 100%;
+    height: 100%;
+}
+
+.homepageHeaderContainer {
+    background-image: linear-gradient(to bottom, #051937, #293652, #4b576e, #6f798c, #959daa);
+    border-bottom: 1px solid #051937;
+    width: 100%;
+    height: 42.962963%;
+    max-height: 42.962963%;
+}
+
+.headerContainer {
+    background-image: linear-gradient(to bottom, #051937, #293652, #4b576e, #6f798c, #959daa);
+    border-bottom: 1px solid #051937;
+    width: 100%;
+    height: auto;
+}
+
+.homepageHeader {
+    width: auto;
+    height: auto;
+    padding: 2.3611111% 4.0277778%;
+}
+
+.header {
+    width: auto;
+    height: auto;
+    padding: 2.3611111% 4.0277778%;
+}
+
+.headerNav {
+    width: 100%;
+    width: auto;
+    display: block;
+}
+
+.logo {
+    font-family: "roboto_condensedbold", "Sans Serif";
+    font-size: 25px;
+    color: #ffffff;
+    display: inline-block;
+    margin-left: 20.3472222%;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+.logo a {
+    color: #ffffff;
+    text-decoration: none;
+    border: none;
+    border-style: none;
+}
+
+.logo2Half {
+    color: #b8b8b8;
+    margin: 0px;
+}
+
+.headerButtons {
+    display: inline-block;
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-left: 38.1944444%;
+    padding-left: 0;
+    padding-right: 0;
+    list-style-type: none;
+    width: 25%;
+}
+
+.headerButton1 {
+    background-color: #d4a418;
+    display: inline-block;
+    float: left;
+    border: none;
+    border-style: none;
+    color: #ffffff;
+    padding: 7px 23px;
+    margin-right: 8%;
+    border-radius: 4px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 15px;
+    font-family: "robotobold", "Sans Serif";
+}
+
+.headerButton1:hover {
+    background-color: #edc95e;
+}
+
+.headerButton2 {
+    background-color: #d4a418;
+    display: inline-block;
+    border: none;
+    border-style: none;
+    color: #ffffff;
+    padding: 7px 23px;
+    border-radius: 4px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 15px;
+    font-family: "robotobold", "Sans Serif";
+}
+
+.headerButton2:hover {
+    background-color: #edc95e;
+}
+
+.infoText {
+    font-family: "robotoregular", "Sans Serif";
+    font-size: 36px;
+    color: #ffffff;
+    margin-top: 2.6388889%;
+    margin-bottom: 0px;
+}
+
+.searchForm {
+    margin-top: 4.0277778%;
+    text-align: center;
+    height: 48px;
+    overflow: hidden;
+}
+
+.searchBar {
+    display: inline-block;
+    background-color: #a8adb4;
+    border: none;
+    border-radius: 4px;
+    width: 39.5138889%;
+    padding: 14px;
+    font-family: "robotoregular", "Sans Serif";
+    font-size: 15px;
+}
+
+.searchContainer {
+    background-color: #ffffff;
+    width: 100%;
+    height: auto;
+    min-height: 92.9861111%;
+    max-width: 100%;
+}
+
+.searchBar:focus {
+    outline: none;
+}
+
+.searchButton {
+    display: inline-block;
+    position: relative;
+    left: -10px;
+    background-color: #a8adb4;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    width: auto;
+    padding: 16px;
+    margin: 0;
+    font-size: 15px;
+}
+
+.searchButton:hover {
+    background-color: #d6d8db;
+}
+
+.resultNumText {
+    font-size: 15px;
+    font-family: "robotoregular", "Sans Serif";
+}
+
+.homepageContentContainer {
+    background-color: #ffffff;
+    width: 100%;
+    height: 57.037037%;
+    max-width: 100%;
+    max-height: 57.037037%;
+}
+
+.contentContainer {
+    background-color: #ffffff;
+    width: 100%;
+    height: auto;
+    min-height: 92.9861111%;
+    max-width: 100%;
+}
+
+.first {
+    font-family: "robotoregular", "sans serif";
+}
+
+.userAccountInput {
+    font-family: "robotoregular", "sans serif";
+}
+
+.addNewEntryButton {
+    margin-top: 2%;
+    display: block;
+    text-align: center;
+}
+
+.loginContentContainer {
+    background-color: #ffffff;
+    width: 100%;
+    height: 92.9861111%;
+    max-width: 100%;
+    max-height: 92.9861111%;
+}
+
+.searchResults {
+    padding: 2.3611111% 4.0277778%;
+}
+
+.searchPlaceholder {
+    padding: 1% 1%;
+    border-radius: 4px;
+    /* box-shadow: 0 0 0 1px #a8adb4; */
+    box-shadow: 4px 4px 8px #7a7a7a;
+    font-family: "robotoregular", "sans serif";
+}
+
+.searchPlaceholder:hover {
+    background-color: #ececec;
+}
+
+.searchResultTitleText {
+    font-size: 20px;
+}
+
+.placeholderLink {
+    text-decoration: none;
+    color: blue;
+}
+
+.placeholderLink:hover {
+    
+}
+
+.homepageContent {
+    display: block;
+    width: 91.9444444%;
+    height: auto;
+    max-width: 100%;
+    max-height: 57.037037%;
+    padding: 2.3611111% 4.0277778%;
+}
+
+.banner {
+    position: relative;
+    width: 100%;
+    height: 550px;
+    max-width: 100%;
+    max-height: 550px;
+    /* margin-top: 5%; */ /* Probably looks better without this */
+    overflow: hidden;
+    background-image: url("img/spongebobBanner.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    box-shadow: inset 1.5px 0px 10px 0px #000000;
+}
+
+.content {
+    display: block;
+    position: relative;
+    width: 91.9444444%;
+    height: 92.9861111%;
+    max-width: 100%;
+    min-height: 92.9861111%;
+    max-height: 92.9861111%;
+    padding: 2.3611111% 4.0277778%;
+}
+
+.center {
+    text-align: center;
+}
+
+.loginArea {
+    display: block;
+    background-color: #d6d8db;
+    box-shadow: 0 0 0 2pt #a8adb4;
+    border-radius: 4px;
+    padding: 3% 5%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.contentBoxes {
+    display: inline-block;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    text-align: center;
+    vertical-align: top;
+}
+
+.contentBox1 {
+    display: inline-block;
+    background-color: #ffffff;
+    /* width: 18.0555556%; */
+    /* height: 18.3333333%; */
+    /* max-width: 18.0555556%; */
+    /* max-height: 18.3333333%; */
+    width: 260px;
+    height: 264px;
+    max-width: 260px;
+    max-height: 264px;
+    padding: 14px 10px;
+    box-shadow: 4px 4px 8px #7a7a7a;
+    border-radius: 4px;
+    vertical-align: top;
+}
+
+.contentBox2 {
+    display: inline-block;
+    background-color: #ffffff;
+    /* width: 18.0555556%; */
+    /* height: 18.3333333%; */
+    /* max-width: 18.0555556%; */
+    /* max-height: 18.3333333%; */
+    width: 260px;
+    height: 264px;
+    max-width: 260px;
+    max-height: 264px;
+    padding: 14px 10px;
+    box-shadow: 4px 4px 8px #7a7a7a;
+    border-radius: 4px;
+    vertical-align: top;
+}
+
+.contentBox3 {
+    display: inline-block;
+    background-color: #ffffff;
+    /* width: 18.0555556%; */
+    /* height: 18.3333333%; */
+    /* max-width: 18.0555556%; */
+    /* max-height: 18.3333333%; */
+    width: 260px;
+    height: 264px;
+    max-width: 260px;
+    max-height: 264px;
+    padding: 14px 10px;
+    box-shadow: 4px 4px 8px #7a7a7a;
+    border-radius: 4px;
+    vertical-align: top;
+}
+
+.contentBoxLi {
+    display: inline-block;
+    padding: 0 5%;
+}
+
+.contentHeader {
+    font-family: "robotobold", "Sans Serif";
+    color: #000000;
+    text-align: center;
+}
+
+.contentText {
+    font-family: "robotoregular", "Sans Serif";
+    color: #000000;
+    text-align: left;
+}
+
+.loginTextInput {
+    border: 1px solid #000000;
+    border-radius: 4px;
+    padding: 10px;
+    font-family: "robotoregular", "Sans Serif";
+}
+
+.loginAndRegisterSubmit {
+    display: block;
+    background-color: #d4a418;
+    border: none;
+    border-style: none;
+    color: #ffffff;
+    padding: 7px 23px;
+    width: 100%;
+    margin-top: 10%;
+    border-radius: 4px;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    font-size: 20px;
+    font-family: "robotobold", "Sans Serif";
+}
+
+.loginAndRegisterSubmit:hover {
+    background-color: #edc95e;
+}
+
+.contentLink {
+    
+}
+
+.bottomButtonContainer {
+    display: block;
+    width: 100%;
+    text-align: center;
+    margin-top: 5%;
+}
+
+.bottomButton {
+    background-color: #d4a418;
+    border: none;
+    border-style: none;
+    color: #ffffff;
+    padding: 7px 23px;
+    border-radius: 4px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 30px;
+    font-family: "robotobold", "Sans Serif";
+}
+
+.bottomButton:hover {
+    background-color: #edc95e;
+}
+
+.entryContent {
+    text-align: center;
+}
+
+.tableArea {
+    margin-top: 5%;
+}
+
+.entryTitle {
+    font-family: "robotobold", "Sans Serif";
+    color: #000000;    
+}
+
+table, th, td {
+    margin: 0 auto;
+    font-family: "robotobold", "Sans Serif";
+    color: #000000;    
+}
+
+table {
+    border: 1px solid lightgray;
+}
+
+th, td {
+    padding: 15px;
+}
+
+th {
+    background-color: #d4a418;
+    color: white;
+}
+
+td {
+    background-color: #efefef;
+    text-align: left;
+}
+
+.reviewArea {
+    margin-top: 5%;
+}
+
+.userReviewHeader {
+    background-color: #efefef;
+    width: 43%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0.5% 4%;
+    text-align: left;
+    border: 1px solid white;
+    font-family: "robotobold", "Sans Serif";
+}
+
+.reviewBox {
+    background-color: #efefef;
+    width: 43%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 2% 4%;
+    text-align: left;
+    border: 1px solid white;
+    font-family: "robotoregular", "Sans Serif";
+}
+
+.userTextColor {
+    color: darkblue;
+}
+
+.goldUnderline {
+    text-decoration: underline solid gold;
+}
+
+.newReviewBox {
+    background-color: #efefef;
+    width: 43%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left;
+    padding: 2% 4%;
+    border: 1px solid white;
+    font-family: "robotoregular", "Sans Serif";
+}
+
+.ratingInput {
+    width: 3em;
+    height: 1.5em;
+    border-radius: 4px;
+    border: none;
+    font-size: 15px;
+    font-family: "robotoregular", "Sans Serif";
+}
+
+.reviewTextArea {
+    resize: none;
+    width: 100%;
+    max-width: 100%;
+    border-radius: 4px;
+    border: none;
+    padding: 1% 1%;
+    font-size: 15px;
+    font-family: "robotoregular", "Sans Serif";
+}
+
+.publishReviewButtonContainer {
+    margin-top: 5%;
+}
+
+.publishReviewButton {
+    background-color: #d4a418;
+    border: none;
+    border-style: none;
+    color: #ffffff;
+    padding: 7px 23px;
+    border-radius: 4px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    font-size: 15px;
+    font-family: "robotobold", "Sans Serif";
+}
+
+.publishReviewButton:hover {
+    background-color: #edc95e;
+}
+
+.footerContainer {
+    background-image: linear-gradient(to top, #051937, #293652, #4b576e, #6f798c, #959daa);
+    border-top: 1px solid #051937;
+}
+
+.footer {
+    width: 91.9444444%;
+    padding: 1.18055555% 2.0138889%;
+}
+
+.footerText {
+    display: inline-block;
+    font-family: "robotoregular", "Sans Serif";
+    font-size: 15px;
+    color: #ffffff;
+    padding: 0 1%;
+    text-decoration: none;
+}
+
+.footerText:hover {
+    text-decoration: underline;
+}
+
+.footerLogo {
+    font-family: "roboto_condensedbold", "Sans Serif";
+    font-size: 25px;
+    color: #ffffff;
+    display: inline-block;
+    padding: 0 1%;
+}
+
+.footerLogo a {
+    color: #ffffff;
+    text-decoration: none;
+    border: none;
+    border-style: none;
+}
+

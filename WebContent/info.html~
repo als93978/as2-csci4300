@@ -1,0 +1,147 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+
+  <head>
+    <title>AS1 CSCI4300 - Login</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="stylesheet.css">
+    <script src="https://kit.fontawesome.com/0318fd2bd1.js" crossorigin="anonymous"></script>
+    <script src="outline.js"></script>
+  </head>
+
+  <body>
+    <div class="headerContainer">
+      <header class="header">
+        <nav class="headerNav">
+          <h1 class="logo"><a href="index.html">Media<span class="logo2Half">Catalog</span></a></h1>
+
+          <ul class="headerButtons">
+	    <li><a href="login.html" class="headerButton1">LOGIN</a></li>
+            <li><a href="register.html" class="headerButton2">REGISTER</a></li>
+          </ul>
+        </nav>
+      </header>
+    </div>
+
+    <div class="contentContainer" style="align:center">
+              <section class="first">
+            <fieldset style= "width:50%; margin:auto;">
+              <legend>Profile</legend>
+              <form>
+		<p id="cuser">Current username: </p>
+		<div>New Username: <input type="text" id="username"></div>
+		<br>
+		<div>Re-enter new Username: <input type="text" id="username2"></div>
+		<br>
+		<input type="submit" id="button">
+		<p><br>
+              </form>
+
+	      <form>
+		<p id = "cmail">Current email: </p>
+		<div>New email: <input type="text" id="email" placeholder="example@example.com"> </div>
+		<input type="submit" id="button2">
+		<p><br>
+              </form><br><br>
+
+	      <form>
+		<div>Current password: <input type="text" id="cpass"></div><br>
+		<div>New password: <input type="text" id="newpass"></div><br>
+		<div>Re-enter new password: <input type="text" id="newpass2"></div>
+		<br>
+		<input type="submit" id="button3">
+		<p>
+              </form> 
+            </fieldset>
+	    <br><br>
+            <fieldset style="width:50%; margin:auto;">
+              <legend>Favorite shows</legend>
+              <form>
+		<label id="top_shows"> </label>
+              </form>
+            </fieldset>
+        </section>
+    </div>
+
+    <div class="footerContainer">
+      <footer class="footer">
+        <h1 class="footerLogo"><a href="index.html">Media<span class="logo2Half">Catalog</span></a></h1>
+        <a href="register.html" class="footerText">Register</a>
+      </footer>
+    </div>
+  </body>
+  <script>
+    window.onload = function init() {
+	//this is where we will be use to implement backend to get user password, username, and email
+	var current = "Spongebob";//the following values are placeholders, they will be set once backend is implements
+	var password = "KrustyKrab";
+	var email = "boogeybob@gmail.com"
+	
+	var cuser = document.getElementById("cuser");
+	cuser.innerHTML = "Current Username: " + current;
+	var cmail = document.getElementById("cmail");
+	cmail.innerHTML = "Current email: " + email;
+
+	var topshow = document.getElementById("top_shows");
+	//this is where we will go through the database and get the name and author of shows that user have added to favorites
+	var show = "Spongebob Squarepants";//these are placeholders
+	var rank = 1;
+	var author = "Stephen Hillenburg";
+	var showname = rank + ". " + show + " by " + author;
+	var shows = document.createElement("p");
+	var node = document.createTextNode(showname);
+	shows.appendChild(node);
+	topshow.appendChild(shows);
+
+	document.getElementById("button").addEventListener("click",change_user);
+	document.getElementById("button2").addEventListener("click",change_mail);
+	document.getElementById("button3").addEventListener("click",change_pass);
+    }
+
+    function change_user(){
+	var cuser = document.getElementById("cuser");
+	var user = document.getElementById("username");
+	var reuser = document.getElementById("username2");
+	if(user.value.length<3) {
+	    alert("Username must be at least 3 characters!");
+	} else if(user.value!==reuser.value) {
+	    alert("Usernames must match!");
+	} else {//username doesn't change for now, it will change once backend is implemented
+	    alert("You're username has been changed.");
+	    //implementation of backend
+	}
+    }
+
+    function change_mail() {
+	var regex = /[A-Za-z1-9]{1,}[@]{1}[A-Za-z]{1,}[\.]{1}[A-Za-z]{1,}/
+	var email = document.getElementById("email");
+	if(email.value < 3) {
+	    alert("Please enter in a valid email address!");
+	} else  if(regex.test(email.value)==false) {
+	    alert("Please enter in a valid email address!");
+	} else {
+	    alert("Email has been change.");
+	}
+    }
+
+    function change_pass() {
+	//implementation of backend here
+	var password = "BandGeeks";//placeholder password
+	var cpass = document.getElementById("cpass").value;
+	var pass = document.getElementById("newpass").value;
+	var repass = document.getElementById("newpass2").value;
+	if(pass!==repass) {
+	    alert("Passwords must match!");
+	} else if(password!==cpass) {
+	    alert("Wrong password!");
+	} else if(pass.length<3) {
+	    alert("You're new password needs to be at least 3 characters long");
+	}else {
+	    alert("You're password has been changed!");
+	}
+    }
+  </script>
+</html>
+

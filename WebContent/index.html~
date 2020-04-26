@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  
+  <head>
+    <title>AS1 CSCI4300 - Homepage</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="stylesheet.css">
+  </head>
+
+  <body>
+    <h1>Find information about favorite movies and shows in one place.</h1>
+  </body>
+  
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+  <head>
+    <title>AS1 CSCI4300 - Search</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="stylesheet.css">
+    <script src="https://kit.fontawesome.com/0318fd2bd1.js" crossorigin="anonymous"></script>
+    <script src="outline.js"></script>
+  </head>
+
+  <body>
+    <div class="headerContainer">
+      <header class="header">
+        <nav class="headerNav">
+          <h1 class="logo"><a href="index.html">Media<span class="logo2Half">Catalog</span></a></h1>
+
+          <ul class="headerButtons">
+            <li><a href="login.html" class="headerButton1">LOGIN</a></li>
+            <li><a href="register.html" class="headerButton2">REGISTER</a></li>
+          </ul>
+        </nav>
+
+        <form class="searchForm" method="POST">
+          <input type="text" class="searchBar" id="entry" placeholder="Enter a movie or show title, air date, or other keywords...">
+          <button type="submit" class="searchButton" id="search" onclick="on_click; return false;"><i class="fas fa-search"></i></button>
+        </form>
+      </header>
+    </div>
+
+    <div class="searchContainer" id="searchContainer">
+
+    </div>
+
+    <div class="footerContainer">
+      <footer class="footer">
+        <h1 class="footerLogo"><a href="index.html">Media<span class="logo2Half">Catalog</span></a></h1>
+        <a href="login.html" class="footerText">Login</a>
+        <a href="register.html" class="footerText">Register</a>
+      </footer>
+    </div>
+  </body>
+  <script>
+      window.onload = function init() {
+	  document.getElementById("search").addEventListener("click", on_click);
+      }
+
+      function on_click() {
+	  var entry = document.getElementById("entry").value;
+	  var search = document.getElementById("searchContainer");
+	  var br = document.createElement("br");
+	  while(search.firstNode) {
+              search.removeChild(search.lastChild);
+	  }
+	  var result = 1;
+	  
+	  //go through database and get number of search results. Implement after backend
+	  var placeholder = document.createElement("p");
+	  var result_string = "results found: " + result;
+	  result_string.fontcolor("gray");
+	  var resultnum = document.createTextNode(result_string);
+	  placeholder.appendChild(resultnum);
+	  var hr = document.createElement("hr");
+	  placeholder.appendChild(hr);
+	  if(result > 0) {
+              var node = document.createTextNode("Title: Spongbob\n");
+              placeholder.appendChild(node);
+	      placeholder.appendChild(br);
+	      var br = document.createElement("br");
+              var date = document.createTextNode("First aired: May 1st, 1999");
+              placeholder.appendChild(date);
+	      placeholder.appendChild(br);
+              var sum = document.createTextNode("Short summary: A talking sea sponge fry cook embark of miscellaneous adventures with his pals, a squirrel scientist, greedy crab boss, lazy sea star, and overly annoyed squid neighboor");
+              placeholder.appendChild(sum);
+	      var br = document.createElement("br");
+	      placeholder.appendChild(br);
+	      var br = document.createElement("br");
+	      placeholder.appendChild(br);
+	      var reviews = document.createTextNode("Top review: it's a gift from the gods!");
+	      placeholder.appendChild(reviews);
+	      
+	      var hr = document.createElement("hr");
+	      placeholder.appendChild(hr);
+	  }
+	  search.appendChild(placeholder);
+      }
+    </script>
+</html>
