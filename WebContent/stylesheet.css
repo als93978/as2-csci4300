@@ -252,11 +252,29 @@ body {
     max-height: 92.9861111%;
 }
 
+.searchResultNumText {
+	font-size: 20px;
+	font-family: "robotoregular", "sans serif";
+}
+
 .searchResults {
     padding: 2.3611111% 4.0277778%;
 }
 
+.firstSearchPlaceholder {
+	padding: 1% 1%;
+    border-radius: 4px;
+    /* box-shadow: 0 0 0 1px #a8adb4; */
+    box-shadow: 4px 4px 8px #7a7a7a;
+    font-family: "robotoregular", "sans serif";
+}
+
+.firstSearchPlaceholder:hover {
+    background-color: #ececec;
+}
+
 .searchPlaceholder {
+	margin-top: 3%;
     padding: 1% 1%;
     border-radius: 4px;
     /* box-shadow: 0 0 0 1px #a8adb4; */
