@@ -46,14 +46,16 @@
 					out.println("<p class='searchResultNumText'>No results found. Try refining your search.</p>");
 				
 				for(int i = 0; i < searchResults.size(); i++) {
+					out.println("<form id='searchForm" + i + "'" + " action='GetEntryData' method='POST'>");
+					
 					SearchResult searchResult = searchResults.get(i);
 					
-					out.println("<a href='entry.html' class='placeholderLink'>");
-					
 					if(i == 0)
-						out.println("<div class='firstSearchPlaceholder'>");
+						out.println("<div class='firstSearchPlaceholder'");
 					else
-						out.println("<div class='searchPlaceholder'>");
+						out.println("<div class='searchPlaceholder'");
+					
+					out.println("onclick='goToEntry(" + i + ")'" + " >");
 					
 					out.println("<p class='searchResultTitleText'>");
 					out.println("Title: " + searchResult.getTitle());
@@ -67,12 +69,17 @@
 					out.println("Short summary: " + searchResult.getSummary());
 					out.println("</p>");
 					
+					out.println("<input type='hidden' name='EntryID' value='" + searchResult.getEntryID() + "'" + "/>");
+					
 					out.println("</div>");
 					
-					out.println("</a>");
+					out.println("</form>");
 				}
+				
+				
 			}
 		%>
+		</form>
       </div>
     </div>
 
@@ -83,6 +90,7 @@
         <a href="register.html" class="footerText">Register</a>
       </footer>
     </div>
+  	
   </body>
   
 </html>

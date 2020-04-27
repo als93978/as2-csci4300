@@ -43,13 +43,11 @@ public class SearchDB extends HttpServlet {
 		// process the request, search the database for the keyword
 		response.setContentType("text/html");
 		
-		PrintWriter out = response.getWriter();
-		
 		String dbURL = "jdbc:mysql://localhost:3306/cartoonCatalog?serverTimezone=UTC";
 		
 		String useDBQuery = "use cartoonCatalog;";
 		
-		String searchDBQuery = "select Entry.Title, Entry.ReleaseDate, Entry.Description"
+		String searchDBQuery = "select Entry.EntryID, Entry.Title, Entry.ReleaseDate, Entry.Description"
 				+ " from Entry"
 				+ " where Entry.Title like ?"
 				+ " or Entry.AirDates like ?"
@@ -83,11 +81,12 @@ public class SearchDB extends HttpServlet {
 		    
 		    ArrayList<SearchResult> searchResults = new ArrayList<SearchResult>();
 		    while(rs.next()) {
-		    	String title = rs.getString(1);
-		    	String releaseDate = rs.getString(2);
-		    	String summary = rs.getString(3);
+		    	String entryID = rs.getString(1);
+		    	String title = rs.getString(2);
+		    	String releaseDate = rs.getString(3);
+		    	String summary = rs.getString(4);
 		    	
-		    	SearchResult searchResult = new SearchResult(title, releaseDate, summary);
+		    	SearchResult searchResult = new SearchResult(entryID, title, releaseDate, summary);
 		    	searchResults.add(searchResult);
 		    }
 		    
