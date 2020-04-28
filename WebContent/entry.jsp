@@ -7,8 +7,22 @@
 
 <html lang="en">
   
+  <%
+  	Entry entry = (Entry) request.getAttribute("entry");
+        
+    String entryID = entry.getEntryID();
+    String title = entry.getTitle();
+    String airDates = entry.getAirDates();
+    String releaseDate = entry.getReleaseDate();
+    String runtime = entry.getRuntime();
+    String genre = entry.getGenre();
+    String category = entry.getCategory();
+    String description = entry.getDescription();
+    String imgName = entry.getImgName();
+  %>
+  
   <head>
-    <title>CartoonCatalog | Entry: Spongebob Squarepants</title>
+    <title>CartoonCatalog | Entry: <%= title %></title>
     <meta charset="utf-8">
     <link rel="stylesheet" type="text/css" href="stylesheet.css">
     <script src="https://kit.fontawesome.com/0318fd2bd1.js" crossorigin="anonymous"></script>
@@ -26,20 +40,6 @@
     </div>
 
     <div class="contentContainer">
-      <%
-        Entry entry = (Entry) request.getAttribute("entry");
-        
-        String entryID = entry.getEntryID();
-        String title = entry.getTitle();
-        String airDates = entry.getAirDates();
-        String releaseDate = entry.getReleaseDate();
-        String runtime = entry.getRuntime();
-        String genre = entry.getGenre();
-        String category = entry.getCategory();
-        String description = entry.getDescription();
-      	String imgName = entry.getImgName();
-      %>
-    
       <div class="banner" <% out.println("style='background-image: url(\"img/" + imgName + "\"'"); %>>
       </div>
       
