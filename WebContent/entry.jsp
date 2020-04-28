@@ -1,5 +1,10 @@
 <!DOCTYPE html>
 
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ page import="java.util.ArrayList" %>
+<%@ page import="csci4300.as2.Entry" %>
+<%@ page import="csci4300.as2.Review" %>
+
 <html lang="en">
   
   <head>
@@ -22,43 +27,56 @@
 
     <div class="contentContainer">
       <%
-      	String test = (String) request.getAttribute("Test");
-      
-      	out.println("<p>" + test + "</p>");
+        Entry entry = (Entry) request.getAttribute("entry");
+        
+        String entryID = entry.getEntryID();
+        String title = entry.getTitle();
+        String airDates = entry.getAirDates();
+        String releaseDate = entry.getReleaseDate();
+        String runtime = entry.getRuntime();
+        String genre = entry.getGenre();
+        String category = entry.getCategory();
+        String description = entry.getDescription();
+      	String imgName = entry.getImgName();
       %>
     
-      <div class="banner">
+      <div class="banner" <% out.println("style='background-image: url(\"img/" + imgName + "\"'"); %>>
       </div>
       
       <div class="content">
         <div class="entryContent">
           <div class="tableArea">
-            <h1 class="entryTitle">Spongebob Squarepants</h1>
+            <h1 class="entryTitle"><%= title %></h1>
             
             <table>
               <tr>
                 <th>Air Dates</th>
-                <td>May 1st, 1999 to Present</td>
+                <td><%= airDates %></td>
               </tr>
 
               <tr>
                 <th>ReleaseDate</th>
-                <td>May 1st, 1999</td>
+                <td><%= releaseDate %></td>
               </tr>
 
               <tr>
                 <th>Runtime</th>
-                <td>11 Minutes</td>
+                <td><%= runtime %></td>
               </tr>
 
               <tr>
                 <th>Genre</th>
-                <td>Animated Comedy</td>
+                <td><%= genre %></td>
+              </tr>
+              
+              <tr>
+              	<th>Category</th>
+              	<td><%= category %></td>
               </tr>
 
               <tr>
                 <th>Description</th>
-                <td>The show chronicles the adventures of a cheerful and goofy sea-sponge and his wacky neighbors.</td>
+                <td><%= description %></td>
               </tr>
             </table>
           </div>
@@ -68,40 +86,38 @@
               <h3>User Reviews</h3>
             </div>
             
-            <div class="reviewBox">
-              <p>User: <span class="userTextColor">Neptune</span></p>
-              <p class="goldUnderline">Rating: 5 out of 5</p>
-              <p>Date: Apr 25 2020</p>
-              <p>
-                It is truly a gift from the gods! There is a reason Nickelodeon
-                has made $13 billion from it!
-              </p>
-            </div>
-
-            <div class="reviewBox">
-              <p>User: <span class="userTextColor">aschultz086</span></p>
-              <p class="goldUnderline">Rating: 5 out of 5</p>
-              <p>Date: Apr 24 2020</p>
-              <p>
-                Childhood nostalgia! It's been around about as long as I've been!
-              </p>
-            </div>
-
-            <div class="reviewBox">
-              <p>User: <span class="userTextColor">SomeUser</span></p>
-              <p class="goldUnderline">Rating: 5 out of 5</p>
-              <p>Date: Apr 22 2020</p>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sit amet consectetur adipiscing elit ut aliquam purus sit. Adipiscing at in tellus integer feugiat scelerisque varius. Orci phasellus egestas tellus rutrum tellus pellentesque eu tincidunt tortor. Tristique sollicitudin nibh sit amet commodo nulla facilisi nullam vehicula. Sed tempus urna et pharetra pharetra. Turpis in eu mi bibendum neque egestas congue quisque egestas. Etiam dignissim diam quis enim lobortis scelerisque fermentum. Metus dictum at tempor commodo ullamcorper a lacus. Aliquam ultrices sagittis orci a scelerisque.
-              </p>
-            </div>
+			<%
+				ArrayList<Review> reviews = (ArrayList<Review>) request.getAttribute("reviews");
+			
+				if(reviews != null) {
+					for(int i = 0; i < reviews.size(); i++) {
+						Review review = reviews.get(i);
+						
+						out.println("<div class='reviewBox'>");
+						out.println("<p>Nickname: <span class='userTextColor'>"
+								+ review.getNickname() + "</span></p>");
+						out.println("<p class='goldUnderline'>Rating: "
+								+ review.getRating() + " out of 5</p>");
+						out.println("<p>Date: " + review.getDate() + "</p>");
+						out.println("<h3>" + review.getTitle() + "</h3>");
+						out.println("<p>" + review.getContent() + "</p>");
+						out.println("</div>");
+					}
+				}
+			%>
             
             <div class="newReviewBox">
               <h3>New Review</h3>
-              <form method="POST">
-                <p>Rating: <input class="ratingInput" type="number" minlength="1" maxlength="1" size="1" min="0" max="5"></p>
+              <form action="SubmitReview" method="POST" accept-charset="UTF-8">
+              	<p>Nickname: <input class="nicknameInput" type="text" name="nickname" required>
+              
+                <p>Rating: <input class="ratingInput" type="number" name="rating" minlength="1" maxlength="1" size="1" min="0" max="5" required></p>
 
-                <textarea class="reviewTextArea" rows="15" placeholder="Write your review here..." spellcheck="true"></textarea>
+				<p>Review Title: <input class="reviewTitleInput" type="text" name="title" Required></p>
+
+                <textarea class="reviewTextArea" name="content" rows="15" placeholder="Write your review here..." spellcheck="true" required></textarea>
+                
+                <% out.println("<input type='hidden' name='EntryID' value='" + entryID + "'" + "/>"); %>
                 
                 <div class="publishReviewButtonContainer">
                   <button type="submit" class="publishReviewButton">Publish Review</button>
@@ -110,9 +126,9 @@
             </div>
           </div>
 
-          <div class="bottomButtonContainer">
-	    <a href="user.html" class="bottomButton">Add to Favorites</a>
-	  </div>
+          <!-- <div class="bottomButtonContainer"> -->
+	    	<!-- <a href="user.html" class="bottomButton">Add to Favorites</a> -->
+	  	  <!-- </div> -->
         </div>
       </div>
     </div>

@@ -52,7 +52,7 @@ public class DBTest extends HttpServlet {
 		String testQuery = "SELECT * FROM cartoonCatalog.Entry;";
 		
 		String username = "root";
-		String password = ""; // fill in password, not filled in for security purposes
+		String password = "ajgopattymn7890"; // fill in password, not filled in for security purposes
 		
 		try {
 			Connection connection = DriverManager.getConnection(dbURL, username, password);
