@@ -109,7 +109,7 @@
             <div class="newReviewBox">
               <h3>New Review</h3>
               <form action="SubmitReview" method="POST" accept-charset="UTF-8">
-              	<p>Nickname: <input class="nicknameInput" type="text" name="nickname" required>
+              	<p>Nickname: <input class="nicknameInput" type="text" name="nickname" required></p>
               
                 <p>Rating: <input class="ratingInput" type="number" name="rating" minlength="1" maxlength="1" size="1" min="0" max="5" required></p>
 
