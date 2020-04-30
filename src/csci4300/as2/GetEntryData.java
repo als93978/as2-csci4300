@@ -51,9 +51,16 @@ public class GetEntryData extends HttpServlet {
 		String useDBQuery = "use cartoonCatalog;";
 		
 		String getEntryDataQuery = "select Entry.Title, Entry.AirDates, Entry.ReleaseDate,"
-				+ "Entry.Runtime, Entry.Genre, Entry.Category, Entry.Description, Entry.imgName"
+				+ "Entry.Runtime, Entry.Genre, Entry.Category, Entry.Description, Entry.ImgName, Entry.ImgYPos"
 				+ " from Entry"
 				+ " where EntryID = ?";
+		
+		String getEpisodeDataQuery = "select Episode.EpisodeNum, Episode.Title,"
+				+ " Episode.OriginalAirDate, Episode.Runtime"
+				+ " from Entry, Episode"
+				+ " where Entry.EntryID = Episode.EntryID"
+				+ " and Entry.EntryID = ?"
+				+ " order by Episode.EpisodeNum asc;";
 		
 		String getReviewDataQuery = "select Review.Nickname, Review.Title, Review.Rating,"
 				+ "Review.Date, Review.Content"
@@ -73,6 +80,7 @@ public class GetEntryData extends HttpServlet {
 		    PreparedStatement useDBStmt = connection.prepareStatement(useDBQuery);
 		    useDBStmt.executeQuery();
 		    
+		    // Start get entry data
 		    PreparedStatement getEntryDataPstmt = connection.prepareStatement(getEntryDataQuery);
 		    getEntryDataPstmt.setString(1, entryID);
 		    
@@ -88,6 +96,7 @@ public class GetEntryData extends HttpServlet {
 		    	String category = entryRS.getString(6);
 		    	String description = entryRS.getString(7);
 		    	String imgName = entryRS.getString(8);
+		    	String imgYPos = entryRS.getString(9);
 		    	
 		    	entry.setEntryID(entryID);
 		    	entry.setTitle(title);
@@ -98,10 +107,40 @@ public class GetEntryData extends HttpServlet {
 		    	entry.setCategory(category);
 		    	entry.setDescription(description);
 		    	entry.setImgName(imgName);
+		    	entry.setImgYPos(imgYPos);
 		    }
 		    
 		    request.setAttribute("entry", entry);
+		    // End get entry data
 		    
+		    // Start get episode(s) data
+		    if(entry.getCategory().equals("Series")) {
+			    PreparedStatement getEpisodeDataPstmt = connection.prepareStatement(getEpisodeDataQuery);
+			    getEpisodeDataPstmt.setString(1, entryID);
+			    
+			    ResultSet episodeRS = getEpisodeDataPstmt.executeQuery();
+			    
+			    ArrayList<Episode> episodes = new ArrayList<Episode>();
+			    while(episodeRS.next()) {
+			    	String episodeNum = episodeRS.getString(1);
+			    	String title = episodeRS.getString(2);
+			    	String originalAirDate = episodeRS.getString(3);
+			    	String runtime = episodeRS.getString(4);
+			    	
+			    	Episode episode = new Episode();
+			    	episode.setEpisodeNum(episodeNum);
+			    	episode.setTitle(title);
+			    	episode.setOriginalAirDate(originalAirDate);
+			    	episode.setRuntime(runtime);
+			    	
+			    	episodes.add(episode);
+			    }
+			    
+			    request.setAttribute("episodes", episodes);
+		    }
+		    // end get episode(s) data
+		    
+		    // Start get review data
 		    PreparedStatement getReviewDataPstmt = connection.prepareStatement(getReviewDataQuery);
 		    getReviewDataPstmt.setString(1, entryID);
 		    
@@ -126,6 +165,7 @@ public class GetEntryData extends HttpServlet {
 		    }
 		    
 		    request.setAttribute("reviews", reviews);
+		    // End get review data
 		    
 		    connection.close();
 		} catch (SQLException e) {

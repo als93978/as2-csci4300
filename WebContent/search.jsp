@@ -13,6 +13,15 @@
     <script src="https://kit.fontawesome.com/0318fd2bd1.js" crossorigin="anonymous"></script>
     <script src="outline.js"></script>
     <script src="search.js"></script>
+    
+   	<!-- Favicon -->
+	<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+	<link rel="manifest" href="site.webmanifest">
+	<link rel="mask-icon" href="safari-pinned-tab.svg" color="#5bbad5">
+	<meta name="msapplication-TileColor" content="#da532c">
+	<meta name="theme-color" content="#ffffff">
   </head>
 
   <body>
@@ -20,7 +29,7 @@
       <header class="header">
         <nav class="headerNav">
           <h1 class="logo"><a href="index.html">Cartoon<span class="logo2Half">Catalog</span></a></h1>
-
+          
           <ul class="headerButtons">
             <li><a href="login.html" class="headerButton1">LOGIN</a></li>
             <li><a href="register.html" class="headerButton2">REGISTER</a></li>

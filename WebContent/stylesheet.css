@@ -262,8 +262,11 @@ body {
 }
 
 .firstSearchPlaceholder {
+	/* margin-left: auto; */
+	/* margin-right: auto; */
 	cursor: pointer;
 	padding: 1% 1%;
+	/* width: 50%; */
     border-radius: 4px;
     /* box-shadow: 0 0 0 1px #a8adb4; */
     box-shadow: 4px 4px 8px #7a7a7a;
@@ -277,8 +280,11 @@ body {
 
 .searchPlaceholder {
 	margin-top: 3%;
+	/* margin-left: auto; */
+	/* margin-right: auto; */
 	cursor: pointer;
     padding: 1% 1%;
+    /* width: 50%; */
     border-radius: 4px;
     /* box-shadow: 0 0 0 1px #a8adb4; */
     box-shadow: 4px 4px 8px #7a7a7a;
@@ -482,11 +488,20 @@ body {
     text-align: center;
 }
 
-.tableArea {
+.entryDataTableArea {
+    margin-top: 5%;
+}
+
+.episodesDataTableArea {
     margin-top: 5%;
 }
 
 .entryTitle {
+    font-family: "robotobold", "Sans Serif";
+    color: #000000;    
+}
+
+.episodeHeader {
     font-family: "robotobold", "Sans Serif";
     color: #000000;    
 }

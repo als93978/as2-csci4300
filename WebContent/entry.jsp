@@ -3,6 +3,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ page import="java.util.ArrayList" %>
 <%@ page import="csci4300.as2.Entry" %>
+<%@ page import="csci4300.as2.Episode" %>
 <%@ page import="csci4300.as2.Review" %>
 
 <html lang="en">
@@ -11,57 +12,77 @@
   	Entry entry = (Entry) request.getAttribute("entry");
         
     String entryID = entry.getEntryID();
-    String title = entry.getTitle();
+    String entryTitle = entry.getTitle();
     String airDates = entry.getAirDates();
     String releaseDate = entry.getReleaseDate();
-    String runtime = entry.getRuntime();
+    String entryRuntime = entry.getRuntime();
     String genre = entry.getGenre();
     String category = entry.getCategory();
     String description = entry.getDescription();
     String imgName = entry.getImgName();
+    String imgYPos = entry.getImgYPos();
   %>
   
   <head>
-    <title>CartoonCatalog | Entry: <%= title %></title>
+    <title>CartoonCatalog | Entry: <%= entryTitle %></title>
     <meta charset="utf-8">
     <link rel="stylesheet" type="text/css" href="stylesheet.css">
     <script src="https://kit.fontawesome.com/0318fd2bd1.js" crossorigin="anonymous"></script>
     <script src="outline.js"></script>
+    
+   	<!-- Favicon -->
+	<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+	<link rel="manifest" href="site.webmanifest">
+	<link rel="mask-icon" href="safari-pinned-tab.svg" color="#5bbad5">
+	<meta name="msapplication-TileColor" content="#da532c">
+	<meta name="theme-color" content="#ffffff">
   </head>
 
   <body>
     <div class="headerContainer">
       <header class="header">
-	<nav class="headerNav">
-	  <h1 class="logo"><a href="index.html">Cartoon<span class="logo2Half">Catalog</span></a></h1>
-
-	</nav>
+	  	<nav class="headerNav">
+	  		<h1 class="logo"><a href="index.html">Cartoon<span class="logo2Half">Catalog</span></a></h1>
+		
+		  	<ul class="headerButtons">
+            	<li><a href="login.html" class="headerButton1">LOGIN</a></li>
+            	<li><a href="register.html" class="headerButton2">REGISTER</a></li>
+          	</ul>
+		</nav>
       </header>
     </div>
 
     <div class="contentContainer">
-      <div class="banner" <% out.println("style='background-image: url(\"img/" + imgName + "\"'"); %>>
+      <div class="banner" <% out.println("style='background-image: url(\"img/" + imgName + "\");"); %>
+      <% out.println("background-position: 50% " + imgYPos + "%;'"); %>>
       </div>
       
       <div class="content">
         <div class="entryContent">
-          <div class="tableArea">
-            <h1 class="entryTitle"><%= title %></h1>
+          <div class="entryDataTableArea">
+            <h1 class="entryTitle"><%= entryTitle %></h1>
             
             <table>
-              <tr>
-                <th>Air Dates</th>
-                <td><%= airDates %></td>
-              </tr>
+            
+              <%
+              	if(entry.getCategory().equals("Series")) {
+              		out.println("<tr>");
+              		out.println("<th>Air Dates</th>");
+              		out.println("<td>" + airDates + "</td>");
+              		out.println("</tr>");
+              	}
+              %>
 
               <tr>
-                <th>ReleaseDate</th>
+                <th>Release Date</th>
                 <td><%= releaseDate %></td>
               </tr>
 
               <tr>
                 <th>Runtime</th>
-                <td><%= runtime %></td>
+                <td><%= entryRuntime %></td>
               </tr>
 
               <tr>
@@ -80,6 +101,37 @@
               </tr>
             </table>
           </div>
+          	
+		  <%
+		  	ArrayList<Episode> episodes = (ArrayList<Episode>) request.getAttribute("episodes");
+		          		
+		    if(episodes != null && category.equals("Series")) {
+		    	out.println("<div class='episodesDataTableArea'>");
+		        out.println("<h2 class='episodeHeader'>Episodes</h2>");
+		        out.println("<table>");
+		        out.println("<tr>");
+		        out.println("<th>Episode #</th>");
+		        out.println("<th>Episode Title</th>");
+		        out.println("<th>Original Air Date</th>");
+		        out.println("<th>Runtime</th>");
+		        out.println("</tr>");
+		          		
+		        for(int i = 0; i < episodes.size(); i++) {
+		        	Episode episode = episodes.get(i);
+		          			
+		          	out.println("<tr>");
+		          	out.println("<td>" + episode.getEpisodeNum() + "</td>");
+		          	out.println("<td>" + episode.getTitle() + "</td>");
+		          	out.println("<td>" + episode.getOriginalAirDate() + "</td>");
+		          	out.println("<td>" + episode.getRuntime() + "</td>");
+		          	out.println("</tr>");
+		        }
+		        
+		        out.println("</table>");
+		        out.println("</div>");
+		    }
+		          		
+		  %>
 
           <div class="reviewArea">
             <div class="userReviewHeader">
@@ -135,8 +187,9 @@
 
     <div class="footerContainer">
       <footer class="footer">
-	<h1 class="footerLogo"><a href="index.html">Cartoon<span class="logo2Half">Catalog</span></a></h1>
-
+		<h1 class="footerLogo"><a href="index.html">Cartoon<span class="logo2Half">Catalog</span></a></h1>
+	  	<a href="login.html" class="footerText">Login</a>
+      	<a href="register.html" class="footerText">Register</a>
       </footer>
     </div>
   </body>

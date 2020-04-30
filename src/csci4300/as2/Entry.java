@@ -10,6 +10,7 @@ public class Entry {
 	private String category;
 	private String description;
 	private String imgName;
+	private String imgYPos;
 	
 	public String getEntryID() {
 		return entryID;
@@ -66,6 +67,12 @@ public class Entry {
 	}
 	public void setImgName(String imgName) {
 		this.imgName = imgName;
+	}
+	public String getImgYPos() {
+		return imgYPos;
+	}
+	public void setImgYPos(String imgYPos) {
+		this.imgYPos = imgYPos;
 	}
 
 }
